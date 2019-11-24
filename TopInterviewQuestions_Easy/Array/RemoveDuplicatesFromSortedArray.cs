@@ -1,8 +1,7 @@
-using System;
 using System.Linq;
 using Xunit;
 
-namespace TopInterviewQuestions_Easy
+namespace TopInterviewQuestions_Easy.Array
 {
     public class RemoveDuplicatesFromSortedArray
     {
