@@ -35,6 +35,18 @@ namespace TopInterviewQuestions_Easy.Array
             return profit;
         }
 
+        // Added post-submission for my own benefit. 
+        // Note: When doing these graph problems, consider slope & overall goal
+        public int Solution2(int[] prices)
+        {
+            var profit = 0;
+
+            for (var i = 0; i < prices.Length - 1; i++)
+                profit += Math.Max(0, prices[i + 1] - prices[i]);
+
+            return profit;
+        }
+
         [Theory]
         [InlineData(new[] { 7, 1, 5, 3, 6, 4 }, 7)]
         [InlineData(new[] { 1, 2, 3, 4, 5 }, 4)]
@@ -45,7 +57,7 @@ namespace TopInterviewQuestions_Easy.Array
             // Given
 
             // When
-            var output = Solution(prices);
+            var output = Solution2(prices);
 
             // Then
             Assert.Equal(expected, output);
