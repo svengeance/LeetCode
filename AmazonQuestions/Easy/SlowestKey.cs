@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace AmazonQuestions.Easy
 {
+    // https://leetcode.com/problems/slowest-key/
     public class SlowestKey: TestQuestion<int[], string, char>
     {
         public override (int[] arg1, string arg2)[] TestCases => new[]
