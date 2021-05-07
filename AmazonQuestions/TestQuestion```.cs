@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace AmazonQuestions
@@ -24,7 +26,8 @@ namespace AmazonQuestions
                 var (arg1, arg2) = TestCases[i];
                 var solution = Solution(arg1, arg2);
 
-                Assert.AreEqual(TestAnswers[i], solution);
+                Assert.AreEqual(TestAnswers[i], solution,
+                    $"Failed test case #{i+1} with args {JsonConvert.SerializeObject(TestCases[i])}");
             }
         }
     }
