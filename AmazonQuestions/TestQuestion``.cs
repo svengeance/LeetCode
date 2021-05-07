@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace AmazonQuestions
@@ -13,6 +14,8 @@ namespace AmazonQuestions
 
         public abstract TResult Solution(TArg1 arg1);
 
+        public virtual bool CompareByReference { get; } = true;
+
         [Test]
         public void Solve()
         {
@@ -24,7 +27,17 @@ namespace AmazonQuestions
                 var arg1 = TestCases[i];
                 var solution = Solution(arg1);
 
-                Assert.AreEqual(TestAnswers[i], solution);
+                var serializedTestCase = JsonConvert.SerializeObject(TestCases[i]);
+                var serializedAnswer = JsonConvert.SerializeObject(TestAnswers[i]);
+                var serializedSolution = JsonConvert.SerializeObject(solution);
+                var failedTestMessage = $"Failed test case #{i + 1} with args:\n{serializedTestCase}\n\n" +
+                                        $"Expected: {serializedAnswer}\n\n" +
+                                        $"Was: {serializedSolution}\n\n";
+
+                if (CompareByReference)
+                    Assert.AreEqual(TestAnswers[i], solution, failedTestMessage);
+                else
+                    Assert.AreEqual(serializedAnswer, serializedSolution, failedTestMessage);
             }
         }
     }
