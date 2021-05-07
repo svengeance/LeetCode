@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopInterviewQuestions_Easy", "TopInterviewQuestions_Easy\TopInterviewQuestions_Easy.csproj", "{A60BF760-8451-4FE7-A1E9-9DE706C8627A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonQuestions", "AmazonQuestions\AmazonQuestions.csproj", "{93776B67-AA9F-4C75-B9A2-1BC8E37A5B47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A60BF760-8451-4FE7-A1E9-9DE706C8627A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60BF760-8451-4FE7-A1E9-9DE706C8627A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60BF760-8451-4FE7-A1E9-9DE706C8627A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93776B67-AA9F-4C75-B9A2-1BC8E37A5B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93776B67-AA9F-4C75-B9A2-1BC8E37A5B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93776B67-AA9F-4C75-B9A2-1BC8E37A5B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93776B67-AA9F-4C75-B9A2-1BC8E37A5B47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

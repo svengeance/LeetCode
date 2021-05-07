@@ -1,0 +1,11 @@
+﻿<ProjectConfiguration>
+  <Settings>
+    <IgnoredTests>
+      <NamedTestSelector>
+        <TestName>TopInterviewQuestions_Easy.Array.RotateImage.TestSolution</TestName>
+      </NamedTestSelector>
+      <AllTestsSelector />
+    </IgnoredTests>
+    <IgnoreThisComponentCompletely>True</IgnoreThisComponentCompletely>
+  </Settings>
+</ProjectConfiguration>
