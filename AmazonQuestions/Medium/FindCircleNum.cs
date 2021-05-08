@@ -38,7 +38,7 @@ namespace AmazonQuestions.Medium
 
         public override int[] TestAnswers => new[] { 2, 3, 1, 1, 0 };
 
-        public class City
+        private class City
         {
             public readonly int Position;
             public int? Grouping;
