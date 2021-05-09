@@ -56,21 +56,54 @@ namespace AmazonQuestions.Medium
 
         public override int[] TestAnswers => new[] { 6, -1, 27, -1};
 
-        private class UnionSet
+        /*
+         * Solution obtained and ported from: https://shareablecode.com/snippets/connecting-cities-with-minimum-cost-python-solution-leetcode-7Uuq-8mfn
+         * Watched/read some tutorials on UnionFind/DisjointSet data structures and how they are
+         * an efficient algorithm for monitoring the connectivity of sets with one another
+         */
+
+        private class UnionFind
         {
             public int[] Set;
             public int Count;
 
-            public UnionSet(int count)
+            public UnionFind(int count)
             {
                 Count = count;
                 Set = Enumerable.Range(0, count).ToArray();
+            }
+
+            public int Find(int node)
+            {
+                if (Set[node] != node)
+                    Set[node] = Find(Set[node]);
+
+                return Set[node];
+            }
+
+            public bool MakeUnion(int x, int y)
+            {
+                var (px, py) = (Find(x), Find(y));
+                if (px == py)
+                    return false;
+
+                Set[Math.Min(px, py)] = Math.Max(px, py);
+                Count--;
+
+                return true;
             }
         }
 
         public override int Solution(int N, int[][] connections)
         {
+            Array.Sort(connections, (l, r) => l[2].CompareTo(r[2]));
+            var uf = new UnionFind(N);
+            var cost = 0;
+            foreach (var connection in connections)
+                if (uf.MakeUnion(connection[0] - 1, connection[1] - 1))
+                    cost += connection[2];
 
+            return uf.Count == 1 ? cost : -1;
         }
     }
 }
