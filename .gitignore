@@ -35,3 +35,5 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+/_NCrunch_LeetCode/LeetCode.crunchsolution.cache
+/_NCrunch_LeetCode/LeetCode.executiontimes.cache
