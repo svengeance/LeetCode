@@ -62,7 +62,7 @@ namespace AmazonQuestions.Medium
             )
         };
 
-        public override bool[] TestAnswers => new[] { true, false, false, true };
+        public override bool[] TestAnswers => new[] { true, false, false, false };
 
         public override bool Solution(int[][] maze, int[] start, int[] destination)
         {
